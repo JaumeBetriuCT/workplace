@@ -1,33 +1,53 @@
-import streamlit as st
-from utils import ticket_visualizer
-from utils import show_recommended_tickets
 from PIL import Image
+from yaml.loader import SafeLoader
+from ticket_manager import ticket_manager
+from ticket_creator import ticket_creator
+from plot_generator import plot_generator
+from ticket_prioritizer import ticket_prioritzier
+
+import streamlit_authenticator as stauth
+import yaml
+import streamlit as st
 
 def main():
+
     assistant_logo = Image.open("images/robot_logo.png")
-
     st.set_page_config(layout="wide", page_title="Ticket manager assistant", page_icon=assistant_logo)
-    st.title("Ticket manager assistant")
-    user_name = "Antonio"
-    role = "IT specialist (comunication aplications)"
 
-    col1, col2 = st.columns(2)
+    with open('credentials.yaml') as file:
+        config = yaml.load(file, Loader=SafeLoader)
 
-    with col2:
-        ticket_visualizer()
+    authenticator = stauth.Authenticate(
+        config['credentials'],
+        config['cookie']['name'],
+        config['cookie']['key'],
+        config['cookie']['expiry_days'],
+        config['preauthorized']
+    )
 
-    with col1:
-        button_pressed = st.button("Analyse tickets")
-        if not button_pressed:
-            with st.chat_message("user", avatar=assistant_logo):
-                st.subheader(f"Hello {user_name}. \n Your role is: **{role}**")
-        if button_pressed:
-            with st.chat_message("user", avatar=assistant_logo):
-                st.subheader(f"Hello {user_name}. \n Your role is: **{role}**")
-            with st.chat_message("user", avatar=assistant_logo):
-                st.subheader(f"This is the analysis of the unsolved tickets that might be of interest to you:")
-            
-            show_recommended_tickets(role=role)
+    name, authentication_status, username = authenticator.login('Login', 'main')
+
+    if authentication_status:
+
+        with st.sidebar:
+            tab = st.selectbox("What funcionality are you looking for?", ["Ticket creation", "Ticket manager", "Ticket priorization", "Plot generator"])
+
+        if tab == "Ticket manager":
+            ticket_manager(name, username)
+
+        if tab == "Ticket creation":
+            ticket_creator(name)
+
+        if tab == "Ticket priorization":
+            ticket_prioritzier(username)
+
+        if tab == "Plot generator":
+            plot_generator()
+
+    elif authentication_status == False:
+        st.error('Username/password is incorrect')
+    elif authentication_status == None:
+        st.warning('Please enter your username and password')
 
 if __name__ == "__main__":
     main()

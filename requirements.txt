@@ -1,0 +1,12 @@
+pandas
+streamlit
+streamlit-authenticator==0.2.3
+plotly
+Pillow==9.0.1
+semantic-kernel==0.3.13.dev0
+langchain==0.0.294
+pypdf==3.17.2
+tiktoken==0.5.1
+faiss-cpu==1.7.4
+wordcloud
+nltk

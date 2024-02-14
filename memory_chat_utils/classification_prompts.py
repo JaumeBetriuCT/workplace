@@ -11,13 +11,16 @@ TICKET_CLASSIFICATION_PROMPT = """
 TICKET_CLASSIFICATION_PROMPT_2 = """
     Task: You have to classify the following ticket in one of the following categories depending on who is the best role to take
     care of the ticket. The categories are:
-    - Sales manager
-    - Cybersecurity expert
-    - IT specialist (printers)
-    - IT specialist (office computers)
-    - IT specialist (comunication aplications)
-    - Frontend engineer
-    - Data expert
+    - Lead Handling
+    - Marketing Material Requests
+    - Event Coordination
+    - Client Feedback
+    - Market Research
+    - Software Licensing
+    - Data Storage Issues
+    - Security Breaches
+    - Connectivity Failures
+    - Equipment Upgrades
 
     Ticket: {{$input}}
     Note: Your response should only contain the category. Avoid including any explanations, apologies, or additional text.

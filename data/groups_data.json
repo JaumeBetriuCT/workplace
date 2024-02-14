@@ -1,0 +1,44 @@
+{
+    "Technical Support": [
+        "Software Issues", "Hardware Malfunctions", "Network Problems", "Peripheral Issues", "System Updates"
+    ],
+    "Customer Service": [
+        "Product Inquiries", "Order Management", "Shipping Issues", "Returns and Exchanges", "Feedback and Complaints"
+    ],
+    "Account Management": [
+        "Billing Queries", "Payment Processing", "Account Updates", "Security Concerns", "Subscription Management"
+    ],
+    "Human Resources": [
+        "Workplace Concerns", "Policy Questions", "Payroll Inquiries", "Training and Development", "Health and Safety"
+    ],
+    "Facilities": [
+        "Building Maintenance", "Workspace Issues", "Security Incidents", "Access Problems", "Environmental Controls"
+    ],
+    "IT and Infrastructure": [
+        "Software Licensing", "Data Storage Issues", "Security Breaches", "Connectivity Failures", "Equipment Upgrades"
+    ],
+    "Sales and Marketing": [
+        "Lead Handling", "Marketing Material Requests", "Event Coordination", "Client Feedback", "Market Research"
+    ],
+    "Legal and Compliance": [
+        "Contractual Issues", "Compliance Queries", "Data Protection", "Intellectual Property Rights", "Legal Disputes"
+    ],
+    "Product Development": [
+        "Feature Requests", "Bug Reports", "Performance Feedback", "Usability Suggestions", "Beta Testing"
+    ],
+    "Project Management": [
+        "Project Delays", "Resource Allocation", "Stakeholder Communication", "Budget Concerns", "Scope Changes"
+    ],
+    "Supply Chain": [
+        "Vendor Issues", "Inventory Shortages", "Logistics Problems", "Quality Control", "Procurement Requests"
+    ],
+    "Quality Assurance": [
+        "Product Quality Complaints", "Service Delivery Issues", "Audit Findings", "Compliance Checks", "Improvement Suggestions"
+    ],
+    "Research and Development": [
+        "Research Projects", "Innovation Suggestions", "Patent Filings", "Collaboration Opportunities", "Funding Queries"
+    ],
+    "Customer Experience": [
+        "User Interface Problems", "Customer Journey Mapping", "Experience Enhancement", "Loyalty Program Issues", "Service Accessibility"
+    ]
+}
